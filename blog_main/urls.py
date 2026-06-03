@@ -33,10 +33,13 @@ urlpatterns = [
     path('',views.home, name='social'),
     path('about/', views.about, name='about'),
     path('category/', include('blogs.urls')),
+    path('register/', views.register, name='register'),
+    path('blogs/login/',views.login, name='login'),
+    path('blogs/logout/',views.logout, name='logout'),
     path('<slug:slug>/', BlogsView.blogs, name='blogs'),
     # search endpoint
     path('blogs/search/',BlogsView.search, name='search'),
-    
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
